@@ -1,0 +1,10 @@
+.offer {
+  background-image: url(/images/fonoffer.png?78dd4c357f7229c4e42e7f575ab99c5d);
+  margin-top: 55px;
+  padding: 4% 0;
+}
+.offer .card {
+  border: none;
+  background-color: #0a53be;
+  color: white;
+}
