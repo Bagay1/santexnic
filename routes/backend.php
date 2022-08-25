@@ -16,4 +16,8 @@ Route::group(
         Route::resources([
             'services' => \App\Http\Controllers\ServiceAdminController::class,
         ]);
+
+        Route::controller(\App\Http\Controllers\ServiceAdminController::class)->group(function(){
+            Route::post('/importServices', 'importServices')->name('importServices');
+        });
     });

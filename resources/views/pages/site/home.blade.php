@@ -25,8 +25,10 @@
         </div>
     </div>
 
-    <div class="services">
+    <x-feature></x-feature>
 
+    <div class="services" id="service">
+<x-servise-list></x-servise-list>
 
     </div>
 @endsection

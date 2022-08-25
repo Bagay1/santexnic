@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\ServiceImport;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Maatwebsite\Excel\Excel;
 
 class ServiceAdminController extends MainController
 {
@@ -12,7 +15,8 @@ protected $path = 'pages.admin.services.';
     {
         $this->template = $this->path.'list';
         $this->vars =[
-            'title' => 'Список услуг'
+            'title' => 'Список услуг',
+            'services' =>Service::all(),
         ];
 
         return $this->render_admin();
@@ -32,7 +36,13 @@ protected $path = 'pages.admin.services.';
 
     public function store(Request $request)
     {
-        Service::create($request->all());
+        $service = new Service();
+        $service->title = $request->title;
+        $service->text = $request->text;
+        $service->url = Str::slug($request->title);
+        $service->price_id = $request->price_id;
+        $service->save();
+
 
         return redirect()->back();
     }
@@ -69,6 +79,12 @@ protected $path = 'pages.admin.services.';
         $services = Service::find($id);
         $services->delete();
 
-        return redirect()->back();
+        return redirect()->route('services.index');
     }
+
+    public function importServices() {
+        \Maatwebsite\Excel\Facades\Excel::import(new ServiceImport, 'storage/Services.xlsx');
+
+        return redirect()->back();
+}
 }
