@@ -1,7 +1,7 @@
 <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
-            <li class="nav-item me-auto"><a class="navbar-brand" href="../../../starter-kit/ltr/vertical-menu-template/"><span class="brand-logo">
+            <li class="nav-item me-auto"><a class="navbar-brand" href=""><span class="brand-logo">
                           </span>
                     <h2 class="brand-text">Админка</h2>
                 </a></li>

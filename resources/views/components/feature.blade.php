@@ -12,7 +12,7 @@
             <div class="col-md-5 order-2 order-md-1 mt-md-0 mt-5">
                 <h2 class="mb-4">Установка сантехнического оборудования</h2>
                 <p class="text-muted mb-5">Монтаж всех видов раковин ванн. Скрытие технических узлов в дизайне интерьера</p>
-                <a href="javascript: void(0);" class="btn btn-primary">Вызвать специалиста <i class="icon-xs ms-2"
+                <a href='' class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mymodal">Вызвать специалиста <i class="icon-xs ms-2"
                                                                                         data-feather="arrow-right"></i></a>
             </div>
             <div class="col-md-6 ms-md-auto order-1 order-md-2">
@@ -37,7 +37,7 @@
             <div class="col-md-5 ms-md-auto">
                 <h2 class="mb-4">Мастера своего дела</h2>
                 <p class="text-muted mb-5">Специалисты с многолетним опытом в сантехнических работах сделают как компактную квартиру так и большое торговое помещение</p>
-                <a href="javascript: void(0);" class="btn btn-primary">Получить расчет стоимости работ <i class="icon-xs ms-2"
+                <a href="" data-bs-toggle="modal" data-bs-target="#mymodal" class="btn btn-primary">Получить расчет стоимости работ <i class="icon-xs ms-2"
                                                                                         data-feather="arrow-right"></i></a>
             </div>
         </div>

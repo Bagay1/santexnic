@@ -24,6 +24,10 @@ class ServiseList extends Component
      */
     public function render()
     {
-        return view('components.servise-list', ['services'=>Service::all()]);
+
+        $vars = [
+            'services'=>Service::where('active', '1')->get(),
+        ];
+        return view('components.servise-list', $vars);
     }
 }

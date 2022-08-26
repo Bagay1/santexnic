@@ -19,7 +19,10 @@ class ServiceImport implements ToModel
             'title' => $row[0],
             'url' => Str::slug($row[0]),
             'text' => $row[1],
-            'price_id' => $row[2]
+            'price_id' => $row[2],
+            'short_text' => $row[3],
+            'image' => $row[4],
+            'active' => $row[5],
 
         ]);
     }

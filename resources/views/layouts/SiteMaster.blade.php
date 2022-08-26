@@ -6,6 +6,7 @@
 <body>
 
 @include('partials.site.header')
+@include('partials.site.blocks.modal')
 
 @yield('content')
 

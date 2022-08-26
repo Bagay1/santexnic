@@ -19,5 +19,11 @@ Route::group(
 
         Route::controller(\App\Http\Controllers\ServiceAdminController::class)->group(function(){
             Route::post('/importServices', 'importServices')->name('importServices');
+            Route::put('/active/{id}' , 'active')->name('servicess.active');
+        });
+
+        Route::controller(\App\Http\Controllers\AboutController::class)->group(function(){
+            Route::get('/about-admin', 'aboutIndex')->name('about.index');
+            Route::post('/create-about' , 'store')->name('about.store');
         });
     });

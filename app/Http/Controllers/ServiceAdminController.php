@@ -10,13 +10,14 @@ use Maatwebsite\Excel\Excel;
 
 class ServiceAdminController extends MainController
 {
-protected $path = 'pages.admin.services.';
+    protected $path = 'pages.admin.services.';
+
     public function index()
     {
-        $this->template = $this->path.'list';
-        $this->vars =[
+        $this->template = $this->path . 'list';
+        $this->vars = [
             'title' => 'Список услуг',
-            'services' =>Service::all(),
+            'services' => Service::all(),
         ];
 
         return $this->render_admin();
@@ -25,8 +26,8 @@ protected $path = 'pages.admin.services.';
 
     public function create()
     {
-        $this->template = $this->path.'create';
-        $this->vars =[
+        $this->template = $this->path . 'create';
+        $this->vars = [
             'title' => 'Создание услуги'
         ];
 
@@ -50,14 +51,14 @@ protected $path = 'pages.admin.services.';
 
     public function show($id)
     {
-     //
+        //
     }
 
     public function edit($id)
     {
         $service = Service::find($id);
-        $this->template = $this->path.'edit';
-        $this->vars =[
+        $this->template = $this->path . 'edit';
+        $this->vars = [
             'title' => 'Редактирование услуги',
             'services' => $service,
         ];
@@ -68,7 +69,7 @@ protected $path = 'pages.admin.services.';
 
     public function update(Request $request, $id)
     {
-        Service::update($request->all());
+        Service::find($id)->update($request->all());
 
         return redirect()->back();
     }
@@ -82,9 +83,20 @@ protected $path = 'pages.admin.services.';
         return redirect()->route('services.index');
     }
 
-    public function importServices() {
+    public function importServices()
+    {
         \Maatwebsite\Excel\Facades\Excel::import(new ServiceImport, 'storage/Services.xlsx');
 
         return redirect()->back();
-}
+    }
+
+    public function active(Request $request, $id)
+    {
+//        dd($request,$id);
+        $service = Service::find($id);
+        $service->active = $request->active;
+        $service->update();
+
+        return redirect()->back()->with(['sucess' => 'Данные сохранены']);
+    }
 }

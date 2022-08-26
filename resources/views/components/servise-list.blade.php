@@ -9,12 +9,15 @@
             @foreach($services as $item)
                 <div class="card">
                     <div class="card-body">
-                        <h5>{{$item->title}}</h5>
-{{--                        <span>{{$item->price_id}}</span>--}}
+                        <div class="image text-center mb-3">
+                            <img src="{{asset('storage/images/icon/'.$item->image ) }}" class="img-fluid" alt="">
+                        </div>
+                        <h5 class="my-4">{{$item->title}}</h5>
+                        <span>{{$item->short_text ?? ''}}</span>
                     </div>
                     <div class="card-footer">
-                        <a href="" class="btn btn-sm btn-primary">Заказать</a>
-                        <a href="{{route('services.single', $item->id)}}" class="btn btn-sm btn-dark">Подробнее</a>
+                        <a data-bs-toggle="modal" data-bs-target="#mymodal" class="btn btn-sm btn-primary">Заказать</a>
+                        <a href="{{route('services.single', $item->url)}}" class="btn btn-sm btn-dark">Подробнее</a>
                     </div>
                 </div>
             @endforeach

@@ -17,8 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('url');
+            $table->string('short_text');
             $table->longText('text');
             $table->integer('price_id');
+            $table->string('image')->nullable();
+            $table->boolean('active')->default(1);
             $table->timestamps();
         });
     }

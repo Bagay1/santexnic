@@ -32,7 +32,8 @@ class MainController extends Controller
                         ['route' => 'services.index', 'title' => 'Все услуги'],
                         ['route' => 'services.create', 'title' => 'Добавить услугу'],
                     ]
-                ]
+                ],
+                ['route' => 'about.index', 'title' => 'О компании'],
             ]
         ];
         return view($this->template, $this->vars, $menu);

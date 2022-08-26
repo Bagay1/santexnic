@@ -12,8 +12,8 @@ class ServiceSaiteController extends MainController
         return Service::all();
     }
 
-    public function single($id){
-        $services = Service::find($id);
+    public function single($slug){
+        $services = Service::where('url', $slug)->first();
         $this->template = 'pages.site.services.single';
         $this ->vars =[
             'title' => $services->value('title'),
