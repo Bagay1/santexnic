@@ -10,3 +10,7 @@ Route::controller(\App\Http\Controllers\SiteController::class)->group(function()
 Route::controller(\App\Http\Controllers\ServiceSaiteController::class)->group(function(){
     Route::get('/services/{id}', 'single')->name('services.single');
 });
+
+Route::controller(\App\Http\Controllers\TelegramController::class)->group(function(){
+    Route::post('/post-telegram', 'postMessage')->name('postMessage');
+});
