@@ -64,15 +64,16 @@
                                         <div class="col-4">
                                             <button type="submit" class="btn btn-success btn-sm mx-1"><i class="bi bi-save"></i></button>
                                         </div>
+                                    </div>
                                 </form>
+
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
             </div>
-            </td>
-            </tr>
-            @endforeach
-            </tbody>
-            </table>
         </div>
-    </div>
     </div>
 @endsection
 
